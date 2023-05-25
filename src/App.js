@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Header from "./Components/Header";
 import Container from "./Components/Container";
@@ -10,7 +10,17 @@ import SwitcherTema from "./Components/Switcher";
 
 function App() {
 
-  const [tema, setTema] = useState(true);
+  const obtenerTemaGuardado = () => {
+    const temaGuardado = localStorage.getItem("tema");
+    console.log(temaGuardado);
+    return temaGuardado ? JSON.parse(temaGuardado) : true;
+  };
+
+  const [tema, setTema] = useState(obtenerTemaGuardado());
+
+  useEffect(() => {
+    localStorage.setItem("tema", tema);
+  }, [tema]);
 
   const toggleTema = () => {
     setTema((tema) => !tema)
