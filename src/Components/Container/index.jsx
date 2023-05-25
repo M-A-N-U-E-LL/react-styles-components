@@ -5,7 +5,8 @@ import Account from "../Account";
 import List from "../List"
 
 const StyledContainer = styled.div`
-  background-color: #f1f1f1;
+  background-color: ${({ theme }) => theme.body};
+  color: ${({theme}) => theme.text};
   min-height: 90vh;
   padding: 0px 15vw;
 `

@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import privado from "../../assets/images/privado.svg";
 import ojo from "../../assets/images/ojo.svg";
 import dinero from "../../assets/images/dinero.svg";
-import { Box, Btn, Saldo, Detalle, Icono } from "../UI/";
+import { Box, Btn, Saldo, Detalle, Icono, IconoTema } from "../UI/";
 import styled from "styled-components";
 
 const IconMargin = styled(Icono)`
   margin-top: 2px;
 `
-const MoneyIcon = styled(Icono)`
+const MoneyIcon = styled(IconoTema)`
   margin-left: 12px;
 `
 const Account = () => {
